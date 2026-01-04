@@ -3,6 +3,10 @@ from app.websocket import chat_socket
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
+@app.get("/")
+def health_check():
+    return {"status": "ok"}
+
 @app.websocket("/ws/chat")
 async def websocket_endpoint(ws: WebSocket):
     await chat_socket(ws)
