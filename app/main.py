@@ -14,7 +14,9 @@ async def websocket_endpoint(ws: WebSocket):
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # or your frontend URL
+    allow_origins=[
+  "https://rag-chatbot-frontend-ochre.vercel.app"
+],  # or your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
